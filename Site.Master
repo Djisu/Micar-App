@@ -1,0 +1,207 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MiCar.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <asp:PlaceHolder runat="server">     
+          <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>  
+    <webopt:BundleReference runat="server" Path="~/Content/css" /> 
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <style type="text/css">
+        .auto-style3 {
+            float: left;
+            width: 1009px;
+            height: 416px;
+        }
+        .auto-style4 {
+            width: 773px;
+            height: 16px;
+            position: absolute;
+            top: 66px;
+            left: 0px;
+        }
+        .auto-style5 {
+            color: #c8c8c8;
+            font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
+            font-size: 2.3em;
+            margin: 0;
+            width: 849px;
+            height: 35px;
+            position: absolute;
+            top: 45px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+                    <a runat="server" href="~/"><asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" Font-Bold="True" Orientation="Horizontal" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="XX-Small" ForeColor="#990000" StaticSubMenuIndent="10px" CssClass="auto-style4" style="z-index: 1" BorderStyle="Outset">
+                    <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#FFFBD6" />
+                    <DynamicSelectedStyle BackColor="#FFCC66" />
+                    <Items>
+                        <asp:MenuItem Text="Main" Value="Main">
+                            <asp:MenuItem Text="Vehicle Inspection" Value="Vehicle Inspection" NavigateUrl="~/frmVehicleInspection.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Daily Transport Checkout" Value="Daily Transport Checkout" NavigateUrl="~/frmDailyTransportCheckout.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Daily Mileage Reading" Value="Daily Mileage Reading" NavigateUrl="~/frmDailyMileageReading.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Exit" Value="Exit"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Requisitions" Value="Requisitions">
+                            <asp:MenuItem Text="Fuel Requisition" Value="Fuel Requisition" NavigateUrl="~/frmFuelRequisition.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Parts Requisition" Value="Parts Requisition" NavigateUrl="~/frmPartsRequisition.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Tyre Requisition" Value="Tyre Requisition" NavigateUrl="~/frmTyreRequisition.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Miscellaneous" Value="Miscellaneous">
+                            <asp:MenuItem Text="Fault Reporting Screen" Value="Fault Reporting Screen" NavigateUrl="~/frmFaultReporting.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Assign Driver to Vehicle" Value="Assign Driver to Vehicle" NavigateUrl="~/frmDriverVehicle.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Enter Disciplinary Action" Value="Enter Disciplinary Action" NavigateUrl="~/frmDiscipline.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Reminders" Value="Reminders">
+                            <asp:MenuItem Text="Setup Roadworthy Reminder" Value="Setup Roadworthy Reminder" NavigateUrl="~/frmRoadWorthyReminderReport.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Setup Insurance Reminder" Value="Setup Insurance Reminder" NavigateUrl="~/frmInsuranceReminderReport.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Setup Maintenance Reminder" Value="Setup Maintenance Reminder" NavigateUrl="~/frmSetupMaintenance.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Daily Reports" Value="Daily Reports">
+                            <asp:MenuItem Text="Daily Mileage Reading Report" Value="Daily Mileage Reading Report" NavigateUrl="~/frmDailyMileageReadingReport.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Drivers List" Value="Drivers List" NavigateUrl="~/frmDriverReport.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Vehicles List" Value="Vehicles List" NavigateUrl="~/frmVehicleReport.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Produce Disciplinary Report" Value="Produce Disciplinary Report" NavigateUrl="~/frmDisciplinaryReport.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Drivers Assigned to Vehicles Report" Value="Drivers Assigned to Vehicles Report" NavigateUrl="~/frmDriverVehicleReport.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Daily Transport Checkout Report" Value="Daily Transport Checkout Report" NavigateUrl="~/frmDailyCheckoutReport.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Setup" Value="Setup">
+                            <asp:MenuItem Text="Category" Value="Category" NavigateUrl="~/frmCategory.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Supplier" Value="Supplier" NavigateUrl="~/frmManufacturer.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Machine Types" Value="Machine Types" NavigateUrl="~/frmType.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Parts" Value="Parts" NavigateUrl="~/frmParts.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Fuel" Value="Fuel" NavigateUrl="~/frmFuel.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Tyre" Value="Tyre" NavigateUrl="~/frmTyre.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Vehicle" Value="Vehicle" NavigateUrl="~/frmVehicle.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Driver" Value="Driver" NavigateUrl="~/frmDriver.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Customer" Value="Customer" NavigateUrl="~/frmCustomer.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/frmOperatorDefinitions.aspx" Text="Setup Operator" Value="Setup Operator"></asp:MenuItem>
+                            <asp:MenuItem Text="Setup Operator Permissions" Value="Setup Operator Permissions" NavigateUrl="~/frmOperatorPermissions.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/frmRole.aspx" Text="Setup a Role" Value="Setup a Role"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/frmRoleUser.aspx" Text="Add User to a Role" Value="Add User to a Role"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/frmPurgeLog.aspx" Text="Purge Log" Value="Purge Log"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/frmLogRetentionPeriod1.aspx" Text="Setup Retention Period" Value="Setup Retention Period"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Reminder Reports" Value="Reminder Reports">
+                            <asp:MenuItem Text="Planned Maintenance Report" Value="Planned Maintenance Report" NavigateUrl="~/frmMaintenanceReminderReport1.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Insurance Reminder Report" Value="Insurance Reminder Report" NavigateUrl="~/frmInsuranceReminderReport1.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Roadworthy Reminder Report" Value="Roadworthy Reminder Report" NavigateUrl="~/frmRoadWorthyReminderReport.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Requisitions Report" Value="Requisitions Report">
+                            <asp:MenuItem Text="Fuel Requisitions Report" Value="Fuel Requisitions Report" NavigateUrl="~/frmRole2.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Parts  Requisitions Report" Value="Parts  Requisitions Report" NavigateUrl="~/frmPartsRequisitionReport.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Tyres Requisitions Report" Value="Tyres Requisitions Report" NavigateUrl="~/frmTyreRequisitionReport1.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Finance" Value="Finance">
+                            <asp:MenuItem NavigateUrl="~/frmChartofAccounts.aspx" Text="Chart of Accounts" Value="Chart of Accounts"></asp:MenuItem>
+                            <asp:MenuItem Text="Enter Income or Expense  for a Vehicle" Value="Enter Income or Expense  for a Vehicle"></asp:MenuItem>
+                            <asp:MenuItem Text="Produce Income and Expense Report" Value="Produce Income and Expense Report"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticMenuStyle BackColor="White" />
+                    <StaticSelectedStyle BackColor="#FFCC66" />
+                </asp:Menu>
+                <p class="site-title">
+                    &nbsp;<p class="auto-style5" style="z-index: 1">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+    <asp:ScriptManager runat="server">
+        <Scripts>
+            <%--Framework Scripts--%>
+            <asp:ScriptReference Name="MsAjaxBundle" />
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="jquery.ui.combined" />
+            <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+            <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+            <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+            <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+            <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+            <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+            <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+            <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+            <asp:ScriptReference Name="WebFormsBundle" />
+            <%--Site Scripts--%>
+
+        </Scripts>
+    </asp:ScriptManager>
+    <header>
+        <div class="content-wrapper">
+            <div class="auto-style3">
+                </a><p class="site-title">
+                    &nbsp;<p class="site-title">
+                    &nbsp;<ul id="menu">
+                        <li><a id="A1" runat="server" href="~/">Home</a></li>
+                        <li><a id="A2" runat="server" href="~/About.aspx">About</a></li>
+                        <li><a id="A3" runat="server" href="~/Contact.aspx">Contact</a></li>
+                    </ul>
+                <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" >
+                    <p>
+                        <br />
+                    </p>
+                    <p>
+                    </p>
+                    <p>
+                    </p>
+                </asp:ContentPlaceHolder>
+                </a>&nbsp;</p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul>
+                                <li><a id="registerLink" runat="server" href="~/Account/Register.aspx">Register</a></li>
+                                <li><a id="loginLink" runat="server" href="~/Account/Login.aspx">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <p>
+                                Hello, <a runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
+                                    <asp:LoginName runat="server" CssClass="username" /></a>!
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
+                            </p>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </section>
+                <nav>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" >
+                <p>
+                    <br />
+                </p>
+            </asp:ContentPlaceHolder>
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+            </div>
+                <p>&copy; ar %> - My ASP.NET Application</p>
+        </div>
+    </footer>
+    </form>
+</body>
+</html>
